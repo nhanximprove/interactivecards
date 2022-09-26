@@ -1,0 +1,356 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* END OF RESET */
+
+:root {
+    --bg-gradient: linear-gradient(90deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    --font-family: 'Plus Jakarta Sans',
+        sans-serif;
+    --light-gray: hsl(270, 3%, 87%);
+    --dark-gray: hsl(279, 6%, 55%);
+    --dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+main {
+    display: flex;
+    height: 900px;
+    width: 90%;
+}
+
+aside {
+    width: 483px;
+    background-image: url('./images/bg-main-desktop.png');
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.card-front {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    background-image: url('./images/bg-card-front.png');
+    background-repeat: no-repeat;
+    width: 447px;
+    height: 245px;
+    color: white;
+    padding: 2rem;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+}
+
+.card-back {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    background-image: url('./images/bg-card-back.png');
+    background-repeat: no-repeat;
+    width: 447px;
+    height: 245px;
+    color: white;
+    padding: 2rem;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+}
+
+.card-number {
+    font-size: 1.80rem;
+    margin: 2rem 0;
+    letter-spacing: .1rem;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+}
+
+.card-number {
+    margin-top: auto;
+}
+
+.card-cvc-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card-cvc-container p {
+    position: absolute;
+    top: 45%;
+    right: 5%;
+    font-size: 0.8rem;
+}
+
+
+
+#card-info { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+#credit-card-info {
+    width: 40%;
+}
+
+#credit-card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+#credit-card-info label {
+    text-transform: uppercase;
+    color: var(--dark-violet);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+#credit-card-info input {
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    padding: 0.8rem;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+#credit-card-info input::placeholder {
+    font-size: 1rem;
+    color: var(--light-gray);
+}
+
+.cardholder-expiry-container {
+    display: flex;
+    width: 100%;
+}
+
+.day-month {
+    display: flex;
+    margin-right: 1rem;
+}
+
+.cvc-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#credit-card-info .day-month-input {
+    margin-right: 1rem;
+    width: 3rem;
+}
+
+#submit-button {
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--dark-violet);
+    color: white;
+}
+
+/* COMPLETED STATE */
+#completed {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+
+/* MOBILE */
+@media screen and (max-width: 375px) {
+    body {
+        justify-content: flex-start;
+        width: 100vw;
+    }
+
+
+    main {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    aside {
+        width: 100vw;
+        position: relative;
+        height: 30%;
+    }
+
+    .card-back {
+        z-index: 1;
+        top: -10%;
+        left: 0%;
+    }
+
+    .card-front {
+        z-index: 2;
+        top: 25%;
+        left: -15%;
+    }
+
+    .card-front, .card-back {
+        scale: 0.6;
+    }
+
+        #card-info {
+            margin-top: 5rem;
+            width: 100%;
+        }
+
+        #credit-card-info {
+            width: 90%;
+        }
+
+        .cardholder-expiry-container {
+            width: 90%;
+        }
+        
+}
